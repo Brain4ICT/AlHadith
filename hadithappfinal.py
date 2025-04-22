@@ -43,8 +43,8 @@ X = df['text_ar_cleaned']
 y = df['source']
 
 # Split en train/test
-vect=TfidfVectorizer(max_features=5000)
-X=vect.fit_transform(X).toarray()
+# vect=TfidfVectorizer(max_features=5000)
+# X=vect.fit_transform(X).toarray()
 # Nettoyage du texte arabe
 def clean_arabic(text):
     text = re.sub(r'[^\u0600-\u06FF\s]', '', str(text))
@@ -63,6 +63,8 @@ st.markdown("Enter al-Hadith for source Discovery (ie : Sahih Bukhari, Sahih Mus
 user_input = st.text_area("✍️ Enter the hadith :", height=200)
 
 if st.button("🔍 Source Prediction"):
+    vect=TfidfVectorizer(max_features=5000)
+    X=vect.fit_transform(X).toarray()
     if user_input.strip() == "":
         st.warning("Please input the Hadith.")
     else:
