@@ -20,7 +20,9 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, accuracy_score
 import re
 import pandas as pd
-df=pd.read_csv("all_hadiths_clean.csv")
+file_id = "1JMUEv4C-cIAZEY6_9q7Rl0qMQFCMWbfL"
+download_url = f"https://drive.google.com/uc?export=download&id={file_id}"
+df=pd.read_csv("download_url")
 df.head()
 # Chargement de la data (remplace par ton propre chemin)
 # df = pd.read_csv('path_to_file.csv')
